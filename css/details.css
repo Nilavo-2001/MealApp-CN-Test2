@@ -1,0 +1,22 @@
+.content {
+  text-align: center;
+}
+.body-heading {
+  min-height: fit-content;
+  padding: 3%;
+}
+.ingredients-picture {
+  padding-top: 7%;
+  min-height: 30vh;
+}
+.ingredients-picture-content * {
+  border: none;
+  margin-bottom: 0 !important;
+  border-radius: 0 !important;
+}
+.instructions {
+  height: 50vh;
+}
+.section:nth-child(odd) {
+  background-color: #eeeeee;
+}

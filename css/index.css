@@ -1,0 +1,48 @@
+.content {
+  padding: 5%;
+  text-align: center;
+  background-color: #eeeeee;
+}
+.search-logo {
+  position: relative;
+  border: 2px solid black;
+  width: fit-content;
+  margin: 2rem auto;
+  border-radius: 25px;
+  padding: 1.5%;
+}
+.search-logo::before {
+  content: "";
+  background-image: url("../images/search-logo-image.jpg");
+  background-size: cover;
+  background-position: bottom;
+  position: absolute;
+  border-radius: 25px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.4;
+}
+.search-result-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10%;
+}
+.card {
+  margin-top: 20px;
+  flex: 100%;
+  background-color: #eeeeee;
+  border: 0.5px solid black;
+}
+.fav-btn {
+  margin-left: 5%;
+}
+.food-img {
+  max-height: 400px;
+}
+.search-type:focus {
+  border: 2px solid black;
+  outline: none;
+  box-shadow: none;
+}

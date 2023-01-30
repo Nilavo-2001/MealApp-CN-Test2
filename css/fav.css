@@ -1,0 +1,49 @@
+.content {
+  padding: 5%;
+  text-align: center;
+  background-color: #eeeeee;
+}
+.list-heading {
+  margin-bottom: 2%;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #7f8487;
+  color: #fff;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #fff;
+}
+
+.remove-btn {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: white;
+  margin-left: auto;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.remove-btn:hover {
+  background-color: #fff;
+  color: #333;
+  transform: scale(1.2);
+}
+.btn-close:focus {
+  outline: none !important;
+  box-shadow: none;
+}
