@@ -2,6 +2,7 @@
   padding: 5%;
   text-align: center;
   background-color: #eeeeee;
+  min-height: 100vh;
 }
 .search-logo {
   position: relative;
@@ -34,6 +35,9 @@
   flex: 100%;
   background-color: #eeeeee;
   border: 0.5px solid black;
+}
+.card-title {
+  margin-bottom: 2%;
 }
 .fav-btn {
   margin-left: 5%;

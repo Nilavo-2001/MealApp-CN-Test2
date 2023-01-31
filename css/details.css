@@ -6,17 +6,52 @@
   padding: 3%;
 }
 .ingredients-picture {
-  padding-top: 7%;
   min-height: 30vh;
 }
-.ingredients-picture-content * {
+.ingredients-picture-content > * {
   border: none;
   margin-bottom: 0 !important;
   border-radius: 0 !important;
 }
 .instructions {
+  padding: 1%;
   height: 50vh;
 }
 .section:nth-child(odd) {
   background-color: #eeeeee;
+}
+.section-heading {
+  margin-bottom: 5% !important;
+}
+.ingredients {
+  width: 50%;
+  margin: 0 auto;
+}
+.meal-image {
+  width: 45%;
+}
+.meal-image img {
+  height: 100%;
+  width: 100%;
+}
+.instruction-content {
+  padding: 2% 15%;
+  text-align: left;
+}
+.instruction-content li {
+  background-color: #f6f6f6;
+  border: 0.2px solid black;
+}
+@media (max-width: 720px) {
+  .ingredients {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .meal-image {
+    width: 100%;
+  }
+  .instruction-content {
+    padding: 2% 4%;
+    text-align: left;
+  }
 }
