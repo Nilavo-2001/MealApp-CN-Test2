@@ -1,7 +1,7 @@
 console.log("I am loaded");
 typeSearch();
 searchButton();
-let myList = [];
+let myList = (localStorage.getItem("favs")) ? JSON.parse(localStorage.getItem("favs")) : [];
 async function getMeal(name) {
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
     let data = await response.json();
@@ -29,7 +29,7 @@ function createResult(meal) {
     let newCard = `<div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title fs-3">${meal.strMeal}</h5>
-        <a href="./details.html?${meal.idMeal}" target="_blank" class="btn btn-dark details-btn">More Details</a>
+        <a href="./html/details.html?${meal.idMeal}" target="_blank" class="btn btn-dark details-btn">More Details</a>
         <a  class="btn btn-dark fav-btn" data-meal="${meal.strMeal}" onclick="addFav(this)">Add to favourites</a>
     </div>
 </div>`
