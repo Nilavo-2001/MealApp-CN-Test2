@@ -1,7 +1,8 @@
 console.log("I am loaded");
-let items = JSON.parse(localStorage.getItem("favs"));
+let items = JSON.parse(localStorage.getItem("favs")); // fetching the meals from local storage
 showItems();
 
+// function to populate the meals in dom
 function showItems() {
     let itemsContainer = document.querySelector(".fav-list ul");
     let code = ``;
@@ -11,7 +12,7 @@ function showItems() {
     });
     itemsContainer.innerHTML = code;
 }
-
+// function to delete a meal 
 function deleteItem(item) {
     let index = item.getAttribute("data-index");
     items.splice(index, 1);
