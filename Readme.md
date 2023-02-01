@@ -1,4 +1,5 @@
 Features:
+
 1.Home Page
 
 Can Search any meal from the API and display the search results on the frontend (as I type the search results updates, just like Google does for suggestions).
