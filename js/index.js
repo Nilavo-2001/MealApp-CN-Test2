@@ -8,22 +8,28 @@ async function getMeal(name) {
     //console.log(data);
     return data.meals;
 }
+async function showResult() {
+    let searchBar = document.querySelector(".search-type");
+    let resultsShow = document.querySelector(".search-result-content");
+    let meals;
+    if (searchBar.value) {
+        meals = await getMeal(searchBar.value);
+    }
+    clearResults();
+    if (meals && searchBar.value) {
+        for (const meal of meals) {
+            let newResult = createResult(meal);
+            addResult(newResult);
+        }
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 function typeSearch() {
     let searchBar = document.querySelector(".search-type");
-    searchBar.addEventListener("keyup", async function () {
-        let meals;
-        if (this.value) {
-            meals = await getMeal(this.value)
-        }
-        clearResults();
-        if (meals && this.value) {
-            for (const meal of meals) {
-                let newResult = createResult(meal);
-                addResult(newResult);
-            }
-        }
-
-    })
+    searchBar.addEventListener("keyup", showResult)
 }
 function createResult(meal) {
     let newCard = `<div class="card" style="width: 18rem;">
@@ -46,15 +52,23 @@ function clearResults() {
 function searchButton() {
     let btn = document.querySelector(".search-button");
     btn.addEventListener("click", function () {
-        document.querySelector(".search-type").value = "";
-        let results = document.querySelector(".search-result-content");
-        if (!results.innerHTML) {
-            results.innerHTML = `<h1 class="display-1" style="margin:0 auto">NO RESULT</h1>`;
-        }
+        showResult().then((data) => {
+            if (!data) {
+                let results = document.querySelector(".search-result-content");
+                results.innerHTML = `<h1 class="display-1" style="margin:0 auto">NO RESULT</h1>`;
+            }
+        });
+        addSpinner();
     })
 }
 function addFav(btn) {
     let item = btn.getAttribute("data-meal");
     myList.push(item);
     localStorage.setItem("favs", JSON.stringify(myList));
+}
+function addSpinner() {
+    let results = document.querySelector(".search-result-content");
+    results.innerHTML = `<div class="spinner-border" style="width: 3rem; height: 3rem; margin:5px auto" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>`;
 }
