@@ -40,7 +40,6 @@
   margin-bottom: 2%;
 }
 .fav-btn {
-  margin-top: 1%;
   margin-left: 5%;
 }
 .food-img {
@@ -50,4 +49,12 @@
   border: 2px solid black;
   outline: none;
   box-shadow: none;
+}
+
+/* meadia queries */
+@media (max-width: 720px) {
+  .fav-btn {
+    margin-top: 1%;
+    margin-left: 5%;
+  }
 }
