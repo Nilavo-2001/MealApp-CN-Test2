@@ -15,7 +15,7 @@
 }
 .instructions {
   padding: 1%;
-  height: 50vh;
+  min-height: 50vh;
 }
 .section:nth-child(odd) {
   background-color: #eeeeee;
@@ -36,12 +36,11 @@
 }
 .instruction-content {
   padding: 2% 15%;
-  text-align: left;
 }
-.instruction-content li {
-  background-color: #f6f6f6;
-  border: 0.2px solid black;
+.instruction-content p {
+  font-size: 1.2rem;
 }
+
 @media (max-width: 720px) {
   .ingredients {
     width: 100%;

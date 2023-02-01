@@ -5,6 +5,7 @@ let myList = [];
 async function getMeal(name) {
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
     let data = await response.json();
+    //console.log(data);
     return data.meals;
 }
 function typeSearch() {
@@ -17,19 +18,19 @@ function typeSearch() {
         clearResults();
         if (meals && this.value) {
             for (const meal of meals) {
-                let newResult = createResult(meal.strMeal);
+                let newResult = createResult(meal);
                 addResult(newResult);
             }
         }
 
     })
 }
-function createResult(mealName) {
+function createResult(meal) {
     let newCard = `<div class="card" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title fs-3">${mealName}</h5>
-        <a href="#" class="btn btn-dark details-btn">More Details</a>
-        <a  class="btn btn-dark fav-btn" data-meal="${mealName}" onclick="addFav(this)">Add to favourites</a>
+        <h5 class="card-title fs-3">${meal.strMeal}</h5>
+        <a href="./details.html?${meal.idMeal}" target="_blank" class="btn btn-dark details-btn">More Details</a>
+        <a  class="btn btn-dark fav-btn" data-meal="${meal.strMeal}" onclick="addFav(this)">Add to favourites</a>
     </div>
 </div>`
     return newCard;
